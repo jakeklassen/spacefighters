@@ -1,12 +1,12 @@
 import Phaser from 'phaser';
-import { DemoScene } from './DemoScene';
+import { LobbyScene } from './LobbyScene';
 
 const config: Phaser.Types.Core.GameConfig = {
   title: 'Spacefighters',
   type: Phaser.AUTO, // Uses WebGL with Canvas2DRenderingContext fallback
   width: window.innerWidth,
   height: window.innerHeight,
-  scene: DemoScene,
+  scene: LobbyScene,
   parent: '#container', // Where to inject the canvas element
   fps: {
     target: 60,
