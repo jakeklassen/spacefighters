@@ -37,7 +37,8 @@ export class LobbyScene extends Phaser.Scene {
       fill: '#ffffff',
     });
 
-    console.log(this.input.gamepad.gamepads);
+    console.log(this.input.gamepad.total);
+    console.log(this.input.gamepad.gamepads.length);
 
     // Seems to require button press to fire this off
     this.input.gamepad.on('connected', (pad: Phaser.Input.Gamepad.Gamepad) => {
@@ -69,32 +70,6 @@ export class LobbyScene extends Phaser.Scene {
       const player = new Player(pad, playerImage);
 
       this.players.push(player);
-
-      // this.input.gamepad.on(
-      //   'down',
-      //   (
-      //     pad: Phaser.Input.Gamepad.Gamepad,
-      //     button: Phaser.Input.Gamepad.Button,
-      //     index: number,
-      //   ) => {
-      //     console.log({ pad, button, index });
-
-      //     if (this.gamepad == null) {
-      //       pad.setAxisThreshold(0.5);
-
-      //       this.gamepad = pad;
-      //       this.leftStick = {
-      //         x: pad.axes[0],
-      //         y: pad.axes[1],
-      //       };
-      //       this.rightStick = {
-      //         x: pad.axes[2],
-      //         y: pad.axes[3],
-      //       };
-      //     }
-      //   },
-      //   this,
-      // );
 
       pad.on(
         'down',
